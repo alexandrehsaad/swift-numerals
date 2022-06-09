@@ -1,6 +1,6 @@
 # ``Numerals``
 
-A package containing numeral types.
+A package containing numeral types, for the Swift programming language.
 
 ## Overview
 
