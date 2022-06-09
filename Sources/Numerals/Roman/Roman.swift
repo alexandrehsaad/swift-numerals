@@ -13,7 +13,7 @@ public struct Roman {
 	/// Creates a new instance with the specified value.
 	///
 	/// - parameter value: The value of this instance.
-	/// - Warning: The value must be inbetween negative eight and positive seven included.
+	/// - Warning: The value must be inbetween 0 and 3999.
 	internal init(value: Self.Value) {
 		precondition(0...3999 ~= value)
 		self.value = value
