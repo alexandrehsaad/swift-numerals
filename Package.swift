@@ -27,11 +27,11 @@ let package: Package = .init(
 			path: "Sources"
 		),
 		.testTarget(
-			name: "MeasuresTests",
+			name: "NumeralsTests",
 			dependencies: ["Numerals"],
 			path: "Tests",
 			resources: [
-				.process("MeasuresTests/Resources")
+				.process("NumeralsTests/Resources")
 			]
 		)
 	],
