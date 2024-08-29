@@ -6,9 +6,12 @@
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //
 
-import Foundation
 import XCTest
 @testable import Numerals
+
+#if canImport(Foundation)
+import Foundation
+#endif
 
 internal final class RomanTests: XCTestCase {}
 
@@ -258,7 +261,7 @@ extension RomanTests {
 // MARK: - Decodable
 
 extension RomanTests {
-    #if !os(Linux)
+    #if !os(Linux) && canImport(Foundation)
     internal func test_decodeFromJSONSucceeds() throws {
         // Given
         let bundle: Bundle = .module
@@ -423,6 +426,7 @@ extension RomanTests {
 // MARK: - Encodable
 
 extension RomanTests {
+    #if canImport(Foundation)
     internal func test_encodeToJSONSucceeds() throws {
         // Given
         let value: Roman = 4
@@ -435,6 +439,7 @@ extension RomanTests {
         let data: Data? = "4".data(using: .utf8)
         XCTAssertEqual(result, data)
     }
+    #endif
 }
 
 // MARK: - Equatable
