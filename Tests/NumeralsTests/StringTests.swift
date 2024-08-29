@@ -1,7 +1,8 @@
+//
 // StringTests.swift
 // NumeralsTests
 //
-// Copyright © 2021 Alexandre H. Saad
+// Copyright © 2021-2022 Alexandre H. Saad
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //
 
@@ -9,7 +10,7 @@ import XCTest
 @testable import Numerals
 
 final class StringTests: XCTestCase {
-	func test_isRomanSymbolReturnsTrue() {
+    internal func test_isRomanSymbolReturnsTrue() {
 		// Given
 		let symbol: String = "I"
 		let order: String = "IV"
@@ -20,7 +21,7 @@ final class StringTests: XCTestCase {
 		}
 	}
 	
-	func test_isRomanSymbolReturnsFalse() {
+    internal func test_isRomanSymbolReturnsFalse() {
 		// Given
 		let empty: String = ""
 		let order: String = "VI"
@@ -32,7 +33,7 @@ final class StringTests: XCTestCase {
 		}
 	}
 	
-	func test_isRomanNumeralReturnsTrue() {
+    internal func test_isRomanNumeralReturnsTrue() {
 		// Given
 		let symbol: String = "IV"
 		let order: String = "XVI"
@@ -44,7 +45,7 @@ final class StringTests: XCTestCase {
 		}
 	}
 	
-	func test_isRomanNumeralReturnsFalse() {
+    internal func test_isRomanNumeralReturnsFalse() {
 		// Given
 		let empty: String = ""
 		let order: String = "IVIV"

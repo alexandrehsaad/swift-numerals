@@ -1,7 +1,8 @@
+//
 // Roman+FixedWidthInteger.swift
 // Numerals
 //
-// Copyright © 2021-2022 Alexandre H. Saad
+// Copyright © 2021-2024 Alexandre H. Saad
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //
 
@@ -41,6 +42,7 @@ extension Roman: FixedWidthInteger {
 	}
 	
 	// TODO: multipliedFullWidth
+    @available(swift, deprecated: 1, message: "Not implemented!")
 	public func multipliedFullWidth(by other: Self) -> (high: Self, low: Self.Magnitude) {
 		let product: Self.Value = self.value * other.value
 		let high: Self = .init(truncatingIfNeeded: product >> 4)
@@ -50,6 +52,7 @@ extension Roman: FixedWidthInteger {
 	}
 
 	// TODO: dividingFullWidth
+    @available(swift, deprecated: 1, message: "Not implemented!")
 	public func dividingFullWidth(_ dividend: (high: Self, low: Self.Magnitude)) -> (quotient: Self, remainder: Self) {
 		precondition(self != 0, "Division by zero")
 

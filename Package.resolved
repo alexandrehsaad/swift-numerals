@@ -1,20 +1,20 @@
 {
   "pins" : [
     {
-      "identity" : "swift-contributors-plugin",
+      "identity" : "swift-docc-plugin",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/alexandrehsaad/swift-contributors-plugin",
+      "location" : "https://github.com/swiftlang/swift-docc-plugin.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "8f9b0e81f3fe3281a96dcd5d6345d4736cf4b79d"
+        "revision" : "2eb22993b3dfd0c0d32729b357c8dabb6cd44680",
+        "version" : "1.4.2"
       }
     },
     {
-      "identity" : "swift-docc-plugin",
+      "identity" : "swift-docc-symbolkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-docc-plugin.git",
+      "location" : "https://github.com/swiftlang/swift-docc-symbolkit",
       "state" : {
-        "revision" : "3303b164430d9a7055ba484c8ead67a52f7b74f6",
+        "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
         "version" : "1.0.0"
       }
     },
@@ -23,8 +23,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/alexandrehsaad/swift-numeric-protocols.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "2dd5b594bf8b5b8fd530490cec1ac531cfa51515"
+        "revision" : "4afecc884b0430888c88608ee0604a8050fc0c80",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "swift-numerics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-numerics.git",
+      "state" : {
+        "revision" : "0a5bc04095a675662cf24757cc0640aa2204253b",
+        "version" : "1.0.2"
       }
     }
   ],

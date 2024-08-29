@@ -1,12 +1,12 @@
+//
 // RomanSymbol.swift
 // Numerals
 //
-// Copyright © 2021-2022 Alexandre H. Saad
+// Copyright © 2021-2024 Alexandre H. Saad
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //
 
 /// A representation of a roman symbol.
-@frozen
 internal enum RomanSymbol: String, RawRepresentable, CaseIterable {
 	/// The symbol representing the Arabic numeral zero, or nulla.
 	case N
@@ -104,7 +104,7 @@ internal enum RomanSymbol: String, RawRepresentable, CaseIterable {
 		return self.value.isPower(of: 10)
 	}
 	
-	/// The maxium amount of times a repeatable case can be repeated in succesion.
+	/// The maxium amount of times a repeatable case can be repeated in succession.
 	internal static let maxRecursion: Int = 3
 	
 	/// Concatenates this case with the specified value.
@@ -131,10 +131,10 @@ internal enum RomanSymbol: String, RawRepresentable, CaseIterable {
 		}
 	}
 	
-	/// Seperates this case into an arrray of cases.
+	/// Separates this case into an array of cases.
 	///
-	/// - throws: A roman symbol error if is unseparatable.
-	/// - returns: An array of seperated values.
+	/// - throws: A roman symbol error if is inseparable.
+	/// - returns: An array of separated values.
 	internal func separate() throws -> [Self] {
 		switch self {
 		case .IV:
@@ -150,11 +150,11 @@ internal enum RomanSymbol: String, RawRepresentable, CaseIterable {
 		case .CM:
 			return [.C, .M]
 		default:
-			throw RomanSymbolError.isUnseparable
+			throw RomanSymbolError.isInseparable
 		}
 	}
 	
-	/// Returns a boolean value undicating whether this case is subtractable from the specified value.
+	/// Returns a boolean value indicating whether this case is subtractable from the specified value.
 	///
 	/// If a lower value digit is written to the left of a higher value digit, it is subtracted.
 	/// Only I, X, and C can be used as subtractive numerals.
@@ -173,4 +173,37 @@ internal enum RomanSymbol: String, RawRepresentable, CaseIterable {
 			return false
 		}
 	}
+}
+
+// MARK: - Comparable
+
+extension RomanSymbol: Comparable {
+    /// Returns a boolean value indicating whether the value of the first argument is less than that of the second argument.
+    ///
+    /// ```swift
+    /// let zero: RomanSymbol = .N
+    /// let one: RomanSymbol = .I
+    /// print(zero < one)
+    /// // Prints "true"
+    /// ```
+    ///
+    /// - parameter lhs: A value to compare.
+    /// - parameter rhs: Another value to compare.
+    /// - returns: `true` if lhs is smaller, and `false` otherwise.
+    internal static func < (lhs: Self, rhs: Self) -> Bool {
+        return lhs.value < rhs.value
+    }
+}
+
+// MARK: - CustomStringConvertible
+
+extension RomanSymbol: CustomStringConvertible {
+    internal var description: String {
+        switch self {
+        case .N:
+            return ""
+        default:
+            return self.rawValue
+        }
+    }
 }
