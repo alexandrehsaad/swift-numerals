@@ -6,10 +6,15 @@
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //
 
+import NumericProtocols
+
 /// A representation of a roman numeral.
 public struct Roman {
 	/// The underlying value.
 	internal typealias Value = UInt16
+    
+    /// The underlying value.
+    internal let value: Self.Value
 	
 	/// Creates a new instance with the specified value.
 	///
@@ -19,9 +24,6 @@ public struct Roman {
 		precondition(0...3999 ~= value)
 		self.value = value
 	}
-	
-	/// The underlying value.
-	internal let value: Self.Value
 }
 
 // MARK: - Addable

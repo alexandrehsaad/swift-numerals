@@ -6,6 +6,8 @@
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //
 
+import NumericProtocols
+
 /// A representation of a roman symbol.
 internal enum RomanSymbol: String, RawRepresentable, CaseIterable {
 	/// The symbol representing the Arabic numeral zero, or nulla.
